@@ -160,7 +160,7 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   config.jwt do |jwt|
-    jwt.secret = ENV['GENERATED_SECRET_KEY']
+    jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
     jwt.dispatch_requests = [
       ['POST', %r{^/login$}]
     ]

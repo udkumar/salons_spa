@@ -160,7 +160,7 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   config.jwt do |jwt|
-    jwt.secret = GENERATED_SECRET_KEY
+    jwt.secret = ENV['GENERATED_SECRET_KEY']
     jwt.dispatch_requests = [
       ['POST', %r{^/login$}]
     ]
@@ -169,6 +169,7 @@ Devise.setup do |config|
     ]
     jwt.expiration_time = 30.minutes.to_i
 end
+
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]

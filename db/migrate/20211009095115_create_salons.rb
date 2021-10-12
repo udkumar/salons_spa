@@ -3,7 +3,9 @@ class CreateSalons < ActiveRecord::Migration[6.0]
     create_table :salons do |t|
       t.string :salon_name, null: false
       t.string :gstn, null: true
-      t.string :salon_details
+      t.string :address
+      t.string :pan, null: false
+    
       t.datetime :opening_time, null: false
       t.datetime :closing_time, null: false
 

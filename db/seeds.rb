@@ -7,9 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-      :email                 => "test@test.com",
+      :email                 => "u@test.com",
       :password              => "123456",
       :password_confirmation => "123456"
   )
-  # user.skip_confirmation!
-  user.save!
+user.save!
+
+salon = Salon.new(
+            :salon_name => "xray",
+            :gstn => "23AAPCA4771N1Z6",
+            :pan => "bompk5141k",
+            :opening_time => "8AM",
+            :closing_time => "9PM",
+            :user_id => user.id
+      )
+salon.save!
